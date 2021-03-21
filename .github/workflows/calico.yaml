@@ -1,0 +1,16 @@
+name: 'Calico test'
+# If any file change in the Calico path a new build will be triggered
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - calico/**
+
+jobs:
+  calico-job:
+    runs-on: [ ubuntu-latest ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run
+      working-directory: ./calico
+      run: ./setup.sh

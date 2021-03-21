@@ -1,0 +1,16 @@
+name: 'Weavenet test'
+# If any file change in the weavenet path a new build will be triggered
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - weavenet/**
+
+jobs:
+  weavenet-job:
+    runs-on: [ ubuntu-latest ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run
+      working-directory: ./weavenet
+      run: ./setup.sh

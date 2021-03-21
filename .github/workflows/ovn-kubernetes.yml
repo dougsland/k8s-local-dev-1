@@ -1,0 +1,16 @@
+name: 'OVN Kubernetes test'
+# If any file change in the ovn-kubernetes path a new build will be triggered
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - ovn-kubernetes/**
+
+jobs:
+  ovn-kubernetes-job:
+    runs-on: [ ubuntu-latest ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run
+      working-directory: ./ovn-kubernetes
+      run: ./setup.sh
