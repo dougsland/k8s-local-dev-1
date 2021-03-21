@@ -4,6 +4,7 @@
 [![Cilium test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/cilium.yml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/cilium.yml)
 [![Flannel test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/flannel.yml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/flannel.yml)
 [![OVN Kubernetes test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/ovn-kubernetes.yml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/ovn-kubernetes.yml)
+[![Weavenet test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/weavenet.yml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/weavenet.yml)
 
 **k8s-local-dev** creates Kubernetes local cluster for testing or development. It is based on [kind](https://kind.sigs.k8s.io/) and Container Network Interface (**CNI**) implementations.  
 
