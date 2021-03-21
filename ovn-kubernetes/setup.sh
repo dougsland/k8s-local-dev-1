@@ -26,11 +26,7 @@ if [[ ! -d "${OVN_KUBERNETES_DIR}" ]] ; then
     git clone "${OVN_KUBERNETES_GIT_TREE}"
 fi
 
-# FIXME: See: https://github.com/ovn-org/ovn-kubernetes/pull/2112
-cp patch-fedora33-cg0-enabled.patch ovn-kubernetes
-
 pushd "${OVN_KUBERNETES_DIR}" || exit
-  patch -p1 < patch-fedora33-cg0-enabled.patch
   pushd go-controller || exit
       make
   popd || exit
