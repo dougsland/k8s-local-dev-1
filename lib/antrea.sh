@@ -33,10 +33,10 @@ function antrea_clone_repo_and_set_version() {
     #   Args: ${1} - version                                         #
     ##################################################################
     version="${1}"
-    if [[ ! -d "${DIR_ANTREA}" ]] ; then
+    if [[ ! -d "${ANTREA_DIR}" ]] ; then
         echo "Cloning antrea git tree..."
         git clone https://github.com/vmware-tanzu/antrea.git 1> /dev/null
-        pushd "${DIR_ANTREA}" 1> /dev/null || exit
+        pushd "${ANTREA_DIR}" 1> /dev/null || exit
             echo "Checkout to version ${version}..."
             git checkout "${version}"
         popd 1> /dev/null || exit
@@ -56,11 +56,11 @@ function antrea_create_cluster() {
     # Description:                                                   #
     #   create the kind cluster                                      #
     ##################################################################
-    if [[ ! -d "${DIR_ANTREA}" ]] ; then
-        echo -e "[ \e[1m\e[31mFAIL\e[0m  ] ${DIR_ANTREA} git tree is required."
+    if [[ ! -d "${ANTREA_DIR}" ]] ; then
+        echo -e "[ \e[1m\e[31mFAIL\e[0m  ] ${ANTREA_DIR} git tree is required."
         exit 1
     fi
-    pushd "${DIR_ANTREA}"/ci/kind 1> /dev/null || exit
+    pushd "${ANTREA_DIR}"/ci/kind 1> /dev/null || exit
         echo "Setting cluster..."
         if ./kind-setup.sh create "${ANTREA_CLUSTER_NAME}"; then
             echo "Cluster created...."
