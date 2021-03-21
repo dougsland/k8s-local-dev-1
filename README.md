@@ -1,5 +1,7 @@
 # k8s-local-dev
 
+[![Calico test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/calico.yaml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/calico.yaml)
+
 **k8s-local-dev** creates Kubernetes local cluster for testing or development. It is based on [kind](https://kind.sigs.k8s.io/) and Container Network Interface (**CNI**) implementations.  
 
 ```
