@@ -27,7 +27,7 @@ Supported CNI:
 For more info use:
 	./k8s-local-dev --help
 ```
-All **CNI** and **script configurations** in a [single file](https://github.com/dougsland/k8s-local-dev/blob/main/lib/config.sh)  
+All **CNI** and **script configurations** in a [single file](https://github.com/K8sbykeshed/k8s-local-dev/blob/main/lib/config.sh)  
 
 See also:  
 - [Cyclonus - Tools for understanding, measuring, and applying network policies effectively in kubernetes](https://github.com/mattfenwick/cyclonus)
