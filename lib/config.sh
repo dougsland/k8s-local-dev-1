@@ -41,7 +41,7 @@ FLANNEL_DIR_PLUGINS="plugins"
 FLANNEL_MANIFESTS=(https://raw.githubusercontent.com/flannel-io/flannel/"${FLANNEL_VERSION}"/Documentation/kube-flannel.yml)
 
 ANTREA_CLUSTER_NAME="netpol-antrea-$(date '+%F')-${CLUSTER_NAME}"
-ANTREA_VERSION="v0.12.2"
+ANTREA_VERSION="v0.13.1"
 ANTREA_DIR="antrea"
 
 CILIUM_CLUSTER_NAME="netpol-cilium-$(date '+%F')-${CLUSTER_NAME}"
