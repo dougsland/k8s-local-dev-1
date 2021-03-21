@@ -1,5 +1,6 @@
 # k8s-local-dev
 
+[![Antrea test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/antrea.yml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/antrea.yml)
 [![Calico test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/calico.yaml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/calico.yaml)
 [![Cilium test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/cilium.yml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/cilium.yml)
 [![Flannel test](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/flannel.yml/badge.svg)](https://github.com/K8sbykeshed/k8s-local-dev/actions/workflows/flannel.yml)
