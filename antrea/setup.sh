@@ -17,7 +17,6 @@
 # this utility prints out the golang install dir, even if go is not installed
 # IE it prints the directory where `go install ...` would theoretically place
 # binaries
-#
 source ../lib/config.sh
 source ../lib/common.sh
 source ../lib/antrea.sh
