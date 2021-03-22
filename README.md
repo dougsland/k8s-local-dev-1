@@ -43,6 +43,7 @@ Current variables that users can overwrite:
 | CALICO_CLIENT_VERSION   | Calico client version for deployment |
 | CONTAINER_CMD_INTERFACE | [WIP] docker or podman               |
 
-See also:  
+
+**See also**:  
 - [Cyclonus - Tools for understanding, measuring, and applying network policies effectively in kubernetes](https://github.com/mattfenwick/cyclonus)
 - [k8sprototypes from Jay - kind](https://github.com/jayunit100/k8sprototypes/tree/master/kind)
