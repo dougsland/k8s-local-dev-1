@@ -18,6 +18,8 @@
 # IE it prints the directory where `go install ...` would theoretically place
 # binaries
 #
+source lib/config.sh
+
 SUPPORTED_CNI="\tantrea\n\tcalico\n\tcilium\n\tflannel\n\tovn-kubernetes\n\tweavenet"
 function usage() {
     echo "Usage: ${0} CNI_NAME"
