@@ -33,7 +33,6 @@ However, users can overwrite the default value in the file manually or using dyn
 $ ANTREA_VERSION=v0.12.0 ./k8s-local-dev
 ```
 The command above will **overwrite the default version** from [config.sh](https://github.com/K8sbykeshed/k8s-local-dev/blob/main/lib/config.sh) and set the local cluster with ANTREA 0.12.0
-
 Current variables used for deployment that users can overwrite:
 | ENV Variable            | Description                                 |
 |-------------------------|---------------------------------------------|
