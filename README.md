@@ -28,6 +28,20 @@ For more info use:
 	./k8s-local-dev --help
 ```
 All **CNI** and **script configurations** in a [single file](https://github.com/K8sbykeshed/k8s-local-dev/blob/main/lib/config.sh)  
+However, users can overwrite the default value in the file manually or using dynamic approach, example:
+```
+$ ANTREA_VERSION=v0.12.0 ./k8s-local-dev
+```
+The command above will overwrite the default version from *config.sh* and set the local cluster with ANTREA 0.12.0
+
+Current variables that users can overwrite:
+| ENV Variable            | Description                          |
+|-------------------------|--------------------------------------|
+| FLANNEL_VERSION         | Flannel version for deployment       |
+| ANTREA_VERSION          | Antrea version for deployment        |
+| CILIUM_VERSION          | Cilium version for deployment        |
+| CALICO_CLIENT_VERSION   | Calico client version for deployment |
+| CONTAINER_CMD_INTERFACE | [WIP] docker or podman               |
 
 See also:  
 - [Cyclonus - Tools for understanding, measuring, and applying network policies effectively in kubernetes](https://github.com/mattfenwick/cyclonus)
