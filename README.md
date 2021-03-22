@@ -27,7 +27,7 @@ Supported CNI:
 For more info use:
 	./k8s-local-dev --help
 ```
-All **CNI** and **script configurations** in a [single file](https://github.com/K8sbykeshed/k8s-local-dev/blob/main/lib/config.sh)  
+All **CNI** and **script configurations** are in a [single file](https://github.com/K8sbykeshed/k8s-local-dev/blob/main/lib/config.sh)  
 However, users can overwrite the default value in the file manually or using dynamic approach, example:
 ```
 $ ANTREA_VERSION=v0.12.0 ./k8s-local-dev
