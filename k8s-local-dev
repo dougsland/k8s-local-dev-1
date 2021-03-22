@@ -119,7 +119,7 @@ function main() {
         opt=$(echo "${opt}" | awk '{ print tolower($0); }')
         case "${opt}" in
         antrea)
-            echo "Starting antrea setup..."
+            echo "Starting antrea ${ANTREA_VERSION} setup..."
             pushd ./antrea &> /dev/null || exit
                 ./setup.sh
             popd &> /dev/null || exit
@@ -127,7 +127,7 @@ function main() {
             ;;
 
         calico)
-            echo "Starting calico setup..."
+            echo "Starting calico ${CALICO_VERSION} setup..."
             pushd ./calico &> /dev/null || exit
                 ./setup.sh
             popd &> /dev/null || exit
@@ -135,7 +135,7 @@ function main() {
             ;;
 
         cilium)
-            echo "Starting cilium setup..."
+            echo "Starting cilium ${CILIUM_VERSION} setup..."
             pushd ./cilium &> /dev/null || exit
                 ./setup.sh
             popd &> /dev/null || exit
@@ -143,7 +143,7 @@ function main() {
             ;;
 
         flannel)
-            echo "Starting flannel setup..."
+            echo "Starting flannel ${FLANNEL_VERSION} setup..."
             pushd ./flannel &> /dev/null || exit
                 ./setup.sh
             popd &> /dev/null || exit
@@ -151,7 +151,7 @@ function main() {
             ;;
 
         ovn-kubernetes)
-            echo "Starting ovn-kubernetes setup..."
+            echo "Starting ovn-kubernetes ${OVN_KUBERNETES_VERSION} setup..."
             pushd ./ovn-kubernetes &> /dev/null || exit
                 ./setup.sh
             popd &> /dev/null || exit
@@ -159,7 +159,7 @@ function main() {
             ;;
 
         weavenet)
-            echo "Starting weavenet setup..."
+            echo "Starting weavenet ${WEAVENET_VERSION} setup..."
             pushd ./weavenet &> /dev/null || exit
                 ./setup.sh
             popd &> /dev/null || exit

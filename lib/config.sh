@@ -20,7 +20,9 @@
 #
 ############## GENERAL ###################################
 # Use docker or podman
-CONTAINER_CMD_INTERFACE="docker"
+if [[ -z "${CONTAINER_CMD_INTERFACE}" ]]; then
+    CONTAINER_CMD_INTERFACE="docker"
+fi
 HELM_CMD="helm"
 
 export CONTAINER_CMD_INTERFACE \
@@ -34,18 +36,29 @@ export BIN_PATH
 ############## CNI INFO ########################
 CLUSTER_NAME=$(tr -dc a-z0-9 </dev/urandom | head -c 6 ; echo '')
 
+################### FLANNEL ####################
+if [[ -z "${FLANNEL_VERSION}" ]]; then
+    FLANNEL_VERSION="v0.13.0"
+fi
 FLANNEL_CLUSTER_NAME="netpol-flannel-$(date '+%F')-${CLUSTER_NAME}"
-FLANNEL_VERSION="v0.13.0"
 FLANNEL_GIT_TREE="https://github.com/containernetworking/plugins.git"
 FLANNEL_DIR_PLUGINS="plugins"
 FLANNEL_MANIFESTS=(https://raw.githubusercontent.com/flannel-io/flannel/"${FLANNEL_VERSION}"/Documentation/kube-flannel.yml)
+################### FLANNEL ####################
 
+################### ANTREA ####################
+if [[ -z "${ANTREA_VERSION}" ]]; then
+    ANTREA_VERSION="v0.13.1"
+fi
 ANTREA_CLUSTER_NAME="netpol-antrea-$(date '+%F')-${CLUSTER_NAME}"
-ANTREA_VERSION="v0.13.1"
 ANTREA_DIR="antrea"
+################### ANTREA ####################
 
+################### CILIUM ####################
 CILIUM_CLUSTER_NAME="netpol-cilium-$(date '+%F')-${CLUSTER_NAME}"
-CILIUM_VERSION="v1.9.5"
+if [[ -z "${CILIUM_VERSION}" ]]; then
+    CILIUM_VERSION="v1.9.5"
+fi
 CILIUM_IMAGE="quay.io/cilium/cilium:${CILIUM_VERSION}"
 CILIUM_HELM_REPO_URL="https://helm.cilium.io/"
 CILIUM_HELM_REPO_NAME="cilium"
@@ -59,22 +72,32 @@ CILIUM_HOSTPORT_ENABLED="true"
 CILIUM_BPF_MASQUERADE="false"
 CILIUM_IMAGE_PULLPOLICY="IfNotPresent"
 CILIUM_IPAM_MODE="kubernetes"
+################### CILIUM ####################
 
-
+################### CALICO ####################
 CALICO_CLUSTER_NAME="netpol-calico-$(date '+%F')-${CLUSTER_NAME}"
 CALICO_CLIENT_NAME="calicoctl"
-CALICO_CLIENT_VERSION="v3.18.1"
+
+if [[ -z "${CALICO_CLIENT_VERSION}" ]]; then
+    CALICO_CLIENT_VERSION="v3.18.1"
+fi
+
 CALICO_CLIENT_DOWNLOAD_URL="https://github.com/projectcalico/calicoctl/releases/download/${CALICO_CLIENT_VERSION}/calicoctl"
 CALICO_NODE_OPTIONS=(FELIX_IGNORELOOSERPF=true FELIX_XDPENABLED=false)
 CALICO_MANIFESTS=(https://docs.projectcalico.org/manifests/calico.yaml)
 CALICO_DAEMONSET_ENV="daemonset/calico-node"
+################### CALICO ####################
 
+################### OVN ####################
 OVN_KUBERNETES_GIT_TREE="https://github.com/ovn-org/ovn-kubernetes"
 OVN_KUBERNETES_DIR="ovn-kubernetes"
 OVN_KUBERNETES_DISTRO="ubuntu"
+################### OVN ####################
 
+################### WEAVENET ####################
 WEAVENET_CLUSTER_NAME="netpol-weavenet-$(date '+%F')-${CLUSTER_NAME}"
 WEAVENET_MANIFESTS=(https://raw.githubusercontent.com/weaveworks/weave/master/prog/weave-kube/weave-daemonset-k8s-1.9.yaml)
+################### WEAVENET ####################
 
 export	FLANNEL_CLUSTER_NAME \
 	FLANNEL_VERSION \
