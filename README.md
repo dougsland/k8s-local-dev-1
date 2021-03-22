@@ -34,16 +34,19 @@ $ ANTREA_VERSION=v0.12.0 ./k8s-local-dev
 ```
 The command above will **overwrite the default version** from [config.sh](https://github.com/K8sbykeshed/k8s-local-dev/blob/main/lib/config.sh) and set the local cluster with ANTREA 0.12.0
 
-Current variables that users can overwrite:
-| ENV Variable            | Description                          |
-|-------------------------|--------------------------------------|
-| FLANNEL_VERSION         | Flannel version for deployment       |
-| ANTREA_VERSION          | Antrea version for deployment        |
-| CILIUM_VERSION          | Cilium version for deployment        |
-| CALICO_CLIENT_VERSION   | Calico client version for deployment |
-| CONTAINER_CMD_INTERFACE | [WIP] docker or podman               |
-
-
+Current variables used for deployment that users can overwrite:
+| ENV Variable            | Description                                 |
+|-------------------------|---------------------------------------------|
+| FLANNEL_VERSION         | Flannel version                             |
+| ANTREA_VERSION          | Antrea version                              |
+| CILIUM_VERSION          | Cilium version                              |
+| CALICO_CLIENT_VERSION   | Calico client version                       |
+| CONTAINER_CMD_INTERFACE | [WIP] docker or podman (ATM not suppported) |
+| KUBECTL_VERSION         | kubectl version                             |
+| KUBECTL_PLATFORM        | kubectl platform                            |
+| KIND_VERSION            | kind version                                |
+  
+  
 **See also**:  
 - [Cyclonus - Tools for understanding, measuring, and applying network policies effectively in kubernetes](https://github.com/mattfenwick/cyclonus)
 - [k8sprototypes from Jay - kind](https://github.com/jayunit100/k8sprototypes/tree/master/kind)

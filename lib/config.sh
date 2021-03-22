@@ -137,12 +137,20 @@ export	FLANNEL_CLUSTER_NAME \
 
 ############### KIND/KUBECTL SETTINGS ##########################
 
-KIND_VERSION="v0.10.0"
+if [[ -z "${KIND_VERSION}" ]]; then
+    KIND_VERSION="v0.10.0"
+fi
 KIND_CMD="${BIN_PATH}"/kind
 
-KUBECTL_VERSION="$(curl -L -s https://dl.k8s.io/release/stable.txt)"
+if [[ -z "${KUBECTL_VERSION}" ]]; then
+    KUBECTL_VERSION="$(curl -L -s https://dl.k8s.io/release/stable.txt)"
+fi
+
 KUBECTL_CMD="${BIN_PATH}"/kubectl
-KUBECTL_PLATFORM="amd64"
+
+if [[ -z "${KUBECTL_PLATFORM}" ]]; then
+    KUBECTL_PLATFORM="amd64"
+fi
 
 WAIT_CLUSTER_GET_READY_SEC=2
 WAIT_PODS_TO_BECAME_RUNNING_SEC=5
