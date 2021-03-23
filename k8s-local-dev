@@ -110,6 +110,7 @@ function main() {
     fi
 
     # Enable verbose
+    # shellcheck disable=SC2199
     if [[ "$@" =~ "--verbose" || "$@" =~ "-v" ]]; then
         set -eou pipefail
         set -xv
