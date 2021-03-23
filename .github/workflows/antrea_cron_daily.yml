@@ -1,0 +1,14 @@
+name: "Antrea Cron Daily"
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily, 3:25pm UTC
+    - cron: '25 15 * * *'
+jobs:
+  antrea-daily-job:
+    runs-on: [ ubuntu-latest ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run
+      working-directory: ./antrea
+      run: ./setup.sh
