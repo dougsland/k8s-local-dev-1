@@ -1,4 +1,4 @@
-name: 'Antrea Dir Changed'
+name: "Antrea: Dir Changed job"
 # If any file change in the antrea path a new build will be triggered
 on:
   workflow_dispatch:
