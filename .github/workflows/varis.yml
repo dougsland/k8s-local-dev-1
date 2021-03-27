@@ -1,3 +1,7 @@
+name: 'Shellcheck test'
+# Every push, pull_request (all branches)
+on: [push, pull_request]
+
 jobs:
   weekday_job:
     runs-on: ubuntu-latest
