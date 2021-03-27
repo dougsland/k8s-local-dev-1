@@ -1,0 +1,18 @@
+name: "Test variables"
+on: [push, pull request]
+  env:
+    username: DOUGLAS
+    demo: APPLICATION
+jobs:
+   VariablesExample:
+       runs-on: ubuntu-latest
+       env:
+         job_var1: "variable JOB 12345"
+       steps:
+       - name: "Using workflow variables"
+         run: echo Hello, $username!
+              Welcome to $demo
+              job variable $job_var1
+              step variable: $step_var1
+         env:
+           step_var1: "variable step 678910"
