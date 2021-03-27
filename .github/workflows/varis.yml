@@ -1,4 +1,4 @@
-name: 'Shellcheck test'
+name: 'varis test'
 # Every push, pull_request (all branches)
 on: [push, pull_request]
 
