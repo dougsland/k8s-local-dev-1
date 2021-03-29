@@ -5,6 +5,8 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  env:
+    abbr: DOUGLAS
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,4 +26,4 @@ jobs:
       - name: Read exported variable
         run: |
           echo "$abbr"
-          echo "${{ env.abbr }}"
+          cho "${{ env.abbr }}"
