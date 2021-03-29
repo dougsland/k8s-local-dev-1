@@ -23,4 +23,4 @@ jobs:
       - name: Read exported variable
         run: |
           echo "$abbr"
-          cho "${{ env.abbr }}"
+          echo "${{ env.abbr }}"
