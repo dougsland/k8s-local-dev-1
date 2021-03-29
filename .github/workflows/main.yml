@@ -1,15 +1,13 @@
 name: CI
 on:
   workflow_dispatch:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 env:
-  abbr: DOUGLAS
+  supervar: DOUGLAS
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # Create release branch for the week
   branch:
@@ -17,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Format the date of next Tuesday
-        run: echo "abbr=junior" >> $GITHUB_ENV
+      - name: lastname
+        run: echo "supervar=Landgraf" >> $GITHUB_ENV
 
       - name: Read exported variable
         run: |
-          echo "$abbr"
-          echo "${{ env.abbr }}"
+          echo "$supervar"
+          echo "${{ env.supervar }}"
