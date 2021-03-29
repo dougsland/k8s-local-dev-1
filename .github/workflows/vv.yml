@@ -1,5 +1,5 @@
 name: "Test variables"
-on: [push, pull_request]
+on:
   env:
     username: DOUGLAS
     demo: APPLICATION
