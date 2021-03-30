@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 env:
-  supervar: DOUGLAS
+  supervar: ${{secrets.DOUG}}
 
 jobs:
   # Create release branch for the week
@@ -15,10 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: lastname
-        run: echo "supervar=Landgraf" >> $GITHUB_ENV
-
       - name: Read exported variable
         run: |
-          echo "$supervar"
           echo "${{ env.supervar }}"
